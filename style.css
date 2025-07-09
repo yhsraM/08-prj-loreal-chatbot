@@ -14,7 +14,7 @@
 
 /* —— body + fonts —— */
 body {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: "Helvetica", Arial, Helvetica, sans-serif;
   color: #333;
   display: flex;
   justify-content: center;
@@ -61,18 +61,53 @@ body {
   white-space: pre-line;
 }
 
-/* messages */
-.msg {
+/* Chat message bubbles */
+.user-message,
+.bot-message {
+  display: inline-block;
+  max-width: 80%;
   margin-bottom: 14px;
+  padding: 12px 18px;
+  border-radius: 20px;
   line-height: 1.5;
+  font-size: 17px;
+  word-break: break-word;
+  position: relative;
 }
 
-.msg.user {
-  color: #000;
+.user-message {
+  background: #fff;
+  color: #222;
+  align-self: flex-end;
+  margin-left: 20%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.msg.ai {
-  color: #666666;
+.bot-message {
+  background: #f5e6c4;
+  color: #7a4c00;
+  align-self: flex-start;
+  margin-right: 20%;
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.bot-message.loading {
+  background: #eee;
+  color: #888;
+  font-style: italic;
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
 }
 
 /* input row */
